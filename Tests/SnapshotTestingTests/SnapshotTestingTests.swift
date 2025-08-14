@@ -20,19 +20,10 @@ import XCTest
   import UIKit.UIView
 #endif
 
-final class SnapshotTestingTests: XCTestCase {
+final class SnapshotTestingTests: BaseTestCase {
   private let fixturesURL = URL(fileURLWithPath: #file, isDirectory: false)
-    .deletingLastPathComponent()
-    .appendingPathComponent("__Fixtures__", isDirectory: true)
-
-  override func invokeTest() {
-    withSnapshotTesting(
-      record: .missing,
-      diffTool: .ksdiff
-    ) {
-      super.invokeTest()
-    }
-  }
+      .deletingLastPathComponent()
+      .appendingPathComponent("__Fixtures__", isDirectory: true)
 
   func testAny() {
     struct User { let id: Int, name: String, bio: String }
