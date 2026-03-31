@@ -19,7 +19,7 @@ jobs:
     name: macOS
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
       - name: Select Xcode ${{ matrix.xcode }}
         run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
       - name: Run tests
@@ -35,7 +35,7 @@ jobs:
     name: Linux (Swift ${{ matrix.swift }})
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
       - run: swift test
 
   # windows:
@@ -70,8 +70,8 @@ jobs:
     name: Android
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: skiptools/swift-android-action@v2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+      - uses: skiptools/swift-android-action@2f0d783249992c34b120d33d1e12e261aa753419  # v2.8.2
         with:
           swift-version: ${{ matrix.swift }}
           copy-files: ${GITHUB_WORKSPACE}/Tests/SnapshotTestingTests/__Snapshots__
